@@ -1,0 +1,14 @@
+# WiRocPython service
+[Unit]
+Description=Webserver to check and download received punches
+After=default.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/chip/WiRoc-PunchEvaluator
+ExecStart=/usr/bin/python3 startTCPServer.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target
